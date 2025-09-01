@@ -20,6 +20,12 @@ class Post extends Model implements HasMedia
         ];
     }
 
+    public $fillable = [
+        'title',
+        'content',
+        'excerpt',
+    ];
+
     public function registerMediaCollections(): void
     {
         $this->registerEditorJsMediaCollections();
