@@ -7,11 +7,18 @@
         "dev": "vite"
     },
     "devDependencies": {
-        "@tailwindcss/vite": "^4.0.0",
+        "@editorjs/checklist": "^1.6.0",
+        "@tailwindcss/typography": "^0.5.16",
+        "@tailwindcss/vite": "^4.1.12",
         "axios": "^1.11.0",
         "concurrently": "^9.0.1",
         "laravel-vite-plugin": "^2.0.0",
-        "tailwindcss": "^4.0.0",
+        "tailwindcss": "^4.1.12",
         "vite": "^7.0.4"
+    },
+    "dependencies": {
+        "@editorjs/code": "^2.9.3",
+        "@editorjs/link": "^2.6.2",
+        "editorjs-highlight": "^1.0.3"
     }
 }

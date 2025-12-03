@@ -36,7 +36,13 @@ class PostResource extends Resource
 
                 EditorjsTextField::make('content')
                     ->hiddenOn('create')
-                    ->placeholder('Start writing...'),
+                    ->placeholder('Start writing...')
+                    ->columnSpanFull()
+                    ->addPlugin('checklist', 'editorjs-checklist')
+                    ->addPlugin('code', 'editorjs-code')
+                // ->addPlugin('link-tool', 'editorjs-link-tool', [
+                //     'endpoint' => '/api/editorjs/link',
+                // ]),
             ]);
     }
 
