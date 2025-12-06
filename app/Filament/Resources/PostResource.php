@@ -5,14 +5,13 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\PostResource\Pages;
 use App\Models\Post;
 use Athphane\FilamentEditorjs\Forms\Components\EditorjsTextField;
-use Filament\Forms\Components\Placeholder;
+use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteAction;
+use Filament\Actions\DeleteBulkAction;
+use Filament\Actions\EditAction;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Tables\Actions\BulkActionGroup;
-use Filament\Tables\Actions\DeleteAction;
-use Filament\Tables\Actions\DeleteBulkAction;
-use Filament\Tables\Actions\EditAction;
+use Filament\Schemas\Schema;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
@@ -22,11 +21,11 @@ class PostResource extends Resource
 
     protected static ?string $slug = 'posts';
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static string|null|\BackedEnum $navigationIcon = 'heroicon-o-rectangle-stack';
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form
+        return $schema
             ->columns(1)
             ->schema([
                 TextInput::make('title')
@@ -37,7 +36,17 @@ class PostResource extends Resource
 
                 EditorjsTextField::make('content')
                     ->hiddenOn('create')
-                    ->placeholder('Start writing...'),
+                    ->placeholder('Start writing...')
+                    ->columnSpanFull()
+                    ->addTool('checklist')
+                    ->addTool('linkTool', [
+                        'endpoint' => route('editorjs.link-tool-parser'),
+                    ])
+                    // ->addPlugin('checklist', 'editorjs-checklist')
+                    // ->addPlugin('code', 'editorjs-code')
+                // ->addPlugin('link-tool', 'editorjs-link-tool', [
+                //     'endpoint' => '/api/editorjs/link',
+                // ]),
             ]);
     }
 
@@ -54,11 +63,11 @@ class PostResource extends Resource
             ->filters([
                 //
             ])
-            ->actions([
+            ->recordActions([
                 EditAction::make(),
                 DeleteAction::make(),
             ])
-            ->bulkActions([
+            ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
                 ]),
