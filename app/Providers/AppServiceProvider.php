@@ -2,13 +2,13 @@
 
 namespace App\Providers;
 
-use Filament\Support\Assets\Js;
-use Filament\Support\Facades\FilamentAsset;
+use App\Renderers\LinkBlockRenderer;
+use Athphane\FilamentEditorjs\Facades\FilamentEditorjs;
+use Athphane\FilamentEditorjs\Helpers\EditorjsHelper;
 use Filament\Support\Facades\FilamentView;
 use Filament\View\PanelsRenderHook;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Blade;
-use Illuminate\Support\Facades\Vite;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -22,8 +22,10 @@ class AppServiceProvider extends ServiceProvider
 
         FilamentView::registerRenderHook(
             PanelsRenderHook::HEAD_END,
-            fn (): string => Blade::render('@vite(\'resources/js/app.js\')'),
+            fn(): string => Blade::render('@vite(\'resources/js/app.js\')'),
         );
+
+
     }
 
     /**
@@ -31,6 +33,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        FilamentEditorjs::addRenderer(new LinkBlockRenderer());
     }
 }

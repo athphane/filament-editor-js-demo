@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "81869cb181fe50c981e4d9a58ff31987",
+    "content-hash": "853270adcdcb532fe6e46241adf046c8",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -74,16 +74,16 @@
         },
         {
             "name": "athphane/filament-editorjs",
-            "version": "v2.0.0",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/athphane/filament-editorjs.git",
-                "reference": "c8c5427e16b0d1e98169b8d4bb4d1c9b5e98acd8"
+                "reference": "75bcd44b9130e0de281f3e4aed38e19af4637e35"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/athphane/filament-editorjs/zipball/c8c5427e16b0d1e98169b8d4bb4d1c9b5e98acd8",
-                "reference": "c8c5427e16b0d1e98169b8d4bb4d1c9b5e98acd8",
+                "url": "https://api.github.com/repos/athphane/filament-editorjs/zipball/75bcd44b9130e0de281f3e4aed38e19af4637e35",
+                "reference": "75bcd44b9130e0de281f3e4aed38e19af4637e35",
                 "shasum": ""
             },
             "require": {
@@ -151,7 +151,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-12-05T19:06:48+00:00"
+            "time": "2025-12-06T18:14:57+00:00"
         },
         {
             "name": "blade-ui-kit/blade-heroicons",

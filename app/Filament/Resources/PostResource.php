@@ -38,15 +38,9 @@ class PostResource extends Resource
                     ->hiddenOn('create')
                     ->placeholder('Start writing...')
                     ->columnSpanFull()
-                    ->addTool('checklist')
-                    ->addTool('linkTool', [
+                    ->addPlugin('linkTool', [
                         'endpoint' => route('editorjs.link-tool-parser'),
-                    ])
-                    // ->addPlugin('checklist', 'editorjs-checklist')
-                    // ->addPlugin('code', 'editorjs-code')
-                // ->addPlugin('link-tool', 'editorjs-link-tool', [
-                //     'endpoint' => '/api/editorjs/link',
-                // ]),
+                    ]),
             ]);
     }
 

@@ -2,6 +2,8 @@
 
 namespace App\Providers\Filament;
 
+use App\Renderers\LinkBlockRenderer;
+use Athphane\FilamentEditorjs\FilamentEditorjsPlugin;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -25,7 +27,7 @@ class AdminPanelProvider extends PanelProvider
         return $panel
             ->default()
             ->id('admin')
-            ->path('/')
+            ->path('/admin')
             ->login()
             ->viteTheme('resources/css/filament/admin/theme.css')
             ->colors([

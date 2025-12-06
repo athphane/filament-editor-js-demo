@@ -4,9 +4,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use shweshi\OpenGraph\OpenGraph;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/posts/{post}', function (\App\Models\Post $post) {
+    return view('post', ['post' => $post]);
+})->name('posts.show');
 
 Route::get('/editorjs-link-tool-parser', function (Request $request) {
     $validated = $request->validate([
