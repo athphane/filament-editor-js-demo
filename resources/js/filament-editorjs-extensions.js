@@ -1,5 +1,4 @@
 // Example: add your own EditorJS tools here.
-
 import Checklist from '@editorjs/checklist'
 import CodeTool from '@editorjs/code'
 import LinkTool from '@editorjs/link'

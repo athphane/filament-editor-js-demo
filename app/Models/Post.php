@@ -16,7 +16,7 @@ class Post extends Model implements HasMedia
     protected function casts(): array
     {
         return [
-            'content' => 'array',
+            'content' => 'json',
         ];
     }
 

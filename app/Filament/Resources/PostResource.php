@@ -35,12 +35,8 @@ class PostResource extends Resource
                     ->required(),
 
                 EditorjsTextField::make('content')
-                    ->hiddenOn('create')
                     ->placeholder('Start writing...')
-                    ->columnSpanFull()
-                    ->addPlugin('linkTool', [
-                        'endpoint' => route('editorjs.link-tool-parser'),
-                    ]),
+                    ->columnSpanFull(),
             ]);
     }
 

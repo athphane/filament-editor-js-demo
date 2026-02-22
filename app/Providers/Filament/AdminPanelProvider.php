@@ -2,7 +2,7 @@
 
 namespace App\Providers\Filament;
 
-use App\Renderers\LinkBlockRenderer;
+use App\Filament\Pages\Auth\CustomLogin;
 use Athphane\FilamentEditorjs\FilamentEditorjsPlugin;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
@@ -28,7 +28,7 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('/admin')
-            ->login()
+            ->login(CustomLogin::class)
             ->viteTheme('resources/css/filament/admin/theme.css')
             ->colors([
                 'primary' => Color::Amber,

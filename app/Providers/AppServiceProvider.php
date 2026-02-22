@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use App\Renderers\LinkBlockRenderer;
 use Athphane\FilamentEditorjs\Facades\FilamentEditorjs;
 use Athphane\FilamentEditorjs\Helpers\EditorjsHelper;
 use Filament\Support\Facades\FilamentView;
@@ -33,6 +32,5 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        FilamentEditorjs::addRenderer(new LinkBlockRenderer());
     }
 }
